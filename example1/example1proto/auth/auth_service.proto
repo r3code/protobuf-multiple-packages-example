@@ -10,5 +10,5 @@ message AuthLoginQuery {
 }
 
 message AuthLoginAnswer {
-  example2proto.Error Error = 1; 
+  example1proto.Error Error = 1; 
 }
