@@ -1,0 +1,10 @@
+// this proto contains definitions of model for the problem domain entites
+
+syntax = "proto3";
+
+package example1proto;
+
+message Host {
+	string Name = 1;
+	string IPAddr = 2;
+}

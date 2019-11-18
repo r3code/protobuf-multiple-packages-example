@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package auth;
+
+import "example1proto/shared_messages.proto";
+
+message AuthLoginQuery {
+  string UserName = 1;
+  string Password = 2; 
+}
+
+message AuthLoginAnswer {
+  example2proto.Error Error = 1; 
+}

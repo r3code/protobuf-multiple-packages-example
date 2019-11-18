@@ -1,0 +1,10 @@
+// this proto contains definitions of messages shared my other proto packages
+
+syntax = "proto3";
+
+package example1proto;
+
+message Error {
+	string code = 1;
+	string message = 2;
+}

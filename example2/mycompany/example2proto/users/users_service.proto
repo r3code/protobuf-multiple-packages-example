@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package mycompany.users;
+
+import "mycompany/example2proto/shared_messages.proto";
+
+message User {
+  int64 ID = 1;   
+  string Login = 2;
+  string Name = 3;
+}
+
+message GetUsersListQuery {
+}
+
+message GetUsersListAnswer {
+  repeated User Users = 1;         
+  // you can use short form `example2proto.Error` of long for clarity 
+  mycompany.example2proto.Error Error = 2;
+}

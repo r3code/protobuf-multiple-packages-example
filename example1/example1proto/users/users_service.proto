@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package users;
+
+import "example1proto/shared_messages.proto";
+
+message User {
+  int64 ID = 1;   
+  string Login = 2;
+  string Name = 3;
+}
+
+message GetUsersListQuery {
+}
+
+message GetUsersListAnswer {
+  repeated User Users = 1;
+  example1proto.Error Error = 2;
+}
