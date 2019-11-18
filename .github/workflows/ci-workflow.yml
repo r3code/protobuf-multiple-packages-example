@@ -24,7 +24,7 @@ jobs:
           go-version: ${{ matrix.go_version }}
           
       - name: Install protoc-go-gen
-        uses: go install github.com/golang/protobuf/protoc-gen-go
+        run: go install github.com/golang/protobuf/protoc-gen-go
 
       - name: Install Protoc
         uses: Arduino/actions/setup-protoc@master
