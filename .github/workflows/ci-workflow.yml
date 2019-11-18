@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go_version: [1.12.x, 1.11.x]
-        protobuf_version: [3.9.1, 3.0.2]
+        go_version: [1.13.x]
+        protobuf_version: [3.9.1]
       fail-fast: false
     steps:
       - name: Checkout branch
