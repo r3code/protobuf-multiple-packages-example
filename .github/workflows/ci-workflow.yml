@@ -38,10 +38,12 @@ jobs:
         run: env && go env && pwd
         
       - name: Build example1
-        run: cd example1 && bash ./proto-gen.sh
+        working-directory: example1
+        run: bash ./proto-gen.sh
 
       - name: Build example2
-        run: bash ./example2/proto-gen.sh
+        working-directory: example2
+        run: bash ./proto-gen.sh
 
 
     
