@@ -18,10 +18,13 @@ jobs:
           path: gopath/src/github.com/r3code/protobuf-multiple-packages-example
           fetch-depth: 5
 
-      - name: Setup go
+      - name: Install go
         uses: actions/setup-go@v1
         with:
           go-version: ${{ matrix.go_version }}
+          
+      - name: Install protoc-go-gen
+        uses: go install github.com/golang/protobuf/protoc-gen-go
 
       - name: Install Protoc
         uses: Arduino/actions/setup-protoc@master
