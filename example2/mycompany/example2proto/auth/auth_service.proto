@@ -10,5 +10,6 @@ message AuthLoginQuery {
 }
 
 message AuthLoginAnswer {
+  // you can use short type name `example2proto.Error` or full
   mycompany.example2proto.Error Error = 1; 
 }
