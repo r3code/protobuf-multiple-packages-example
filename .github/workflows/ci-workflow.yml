@@ -26,16 +26,13 @@ jobs:
         run: PATH=$HOME/bin:$PATH protoc --version
         
       - name: PWD
-        run: pwd
-      
-      - name: ls
-        run: ls -l
+        run: pwd && ls -la
 
       - name: Build example1
-        run: ./example1/proto-gen.sh
+        run: cd example1 && bash ./proto-gen.sh
 
       - name: Build example2
-        run: cd example2; bash ./proto-gen.sh
+        run: bash ./example2/proto-gen.sh
 
 
     
