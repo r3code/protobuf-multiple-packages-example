@@ -37,13 +37,17 @@ jobs:
       - name: Show ENV
         run: env && go env && pwd
         
-      - name: Build example1
+      - name: Compile Protobuf for example1
         working-directory: example1
         run: bash ./proto-gen.sh
 
-      - name: Build example2
+      - name: Compile Protobuf for example2
         working-directory: example2
         run: bash ./proto-gen.sh
+      
+      - name: Show go files created 
+        run: find . -name "*.go" 
+      
 
 
     
