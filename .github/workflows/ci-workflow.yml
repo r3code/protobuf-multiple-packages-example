@@ -32,10 +32,10 @@ jobs:
         run: ls -l
 
       - name: Build example1
-        run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH cd gopath/src/github.com/r3code/protobuf-multiple-packages-example; bash ./example1/proto-gen.sh
+        run: ./example1/proto-gen.sh
 
       - name: Build example2
-        run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH cd gopath/src/github.com/r3code/protobuf-multiple-packages-example; bash ./example2/proto-gen.sh
+        run: cd example2; bash ./proto-gen.sh
 
 
     
