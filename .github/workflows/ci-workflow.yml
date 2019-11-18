@@ -1,0 +1,38 @@
+name: Protobuff-Compile-Test
+on: [push]
+
+
+jobs:
+  build_and_test:
+    name: pb-${{ matrix.protobuf_version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go_version: [1.12.x, 1.11.x]
+        protobuf_version: [3.9.1, 3.0.2]
+      fail-fast: false
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v1
+        with:
+          path: gopath/src/github.com/r3code/protobuf-multiple-packages-example
+          fetch-depth: 5
+
+      - name: Setup protoc
+        env:
+          PROTOBUF_VERSION: ${{ matrix.protobuf_version }}
+        run: ./install-protobuf.sh
+
+      - name: Protoc version
+        run: PATH=$HOME/bin:$PATH protoc --version
+      - name: env
+        run: env && go env && pwd
+
+      - name: Build example1
+        run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH bash ./example1/proto-gen.sh
+
+      - name: Build example2
+        run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH bash ./example2/proto-gen.sh
+
+
+    
