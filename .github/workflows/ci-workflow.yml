@@ -26,7 +26,7 @@ jobs:
         run: PATH=$HOME/bin:$PATH protoc --version
 
       - name: Build example1
-        run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH bash ./example1/proto-gen.sh
+        run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH pwd ls bash ./example1/proto-gen.sh
 
       - name: Build example2
         run: GOPATH=/home/runner/work/protobuf/gopath GOBIN=$GOPATH/bin PATH=$HOME/bin:$GOBIN:$PATH bash ./example2/proto-gen.sh
