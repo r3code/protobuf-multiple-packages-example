@@ -49,7 +49,7 @@ jobs:
         run: find . -name "*.go" 
       
       - name: Check go files created 
-        run: bash count=`find . -name "*.go" | grep -c ".go"`; if [ $count -eq 0 ]; then echo "Fail. go files not found"; else echo "OK. Found $count go files";fi
+        run: echo "count=`find . -name \"*.go\" | grep -c \".go\"`; if [ $count -eq 0 ]; then echo \"Fail. go files not found\"; else echo \"OK. Found $count go files\";fi" | bash
       
 
 
